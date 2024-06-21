@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'Dana';
+    font-style: normal;
+    font-weight: 500;
+    src: url(/font/Dana-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'dana-fanum';
+    font-style: normal;
+    font-weight: 700;
+    src: url(/font/dana-fanum-medium.ttf);
+}
+
+@font-face {
+    font-family: 'iran-sanse';
+    font-style: normal;
+    font-weight: 500;
+    src: url(/font/iransansx-demibold.ttf);
+}
+
+@font-face {
+    font-family: 'satoshi';
+    font-style: normal;
+    font-weight: 500;
+    src: url(/font/satoshi-medium.woff);
+}
+
+@font-face {
+    font-family: 'vazirmatn';
+    font-style: normal;
+    font-weight: 500;
+    src: url(/font/vazir/Vazir-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'vazirmatn-farsi-digit';
+    font-style: normal;
+    font-weight: 500;
+    src: url(/font/vazir/Farsi-Digits/Vazir-Medium-FD.ttf);
+}
