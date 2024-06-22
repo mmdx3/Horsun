@@ -1,17 +1,18 @@
 import Image from "next/image";
 import React from "react";
-import HeroImg from "@/public/icon/HeroImg.svg";
+
 import Brandname from "@/public/icon/BrandName";
 import Brand from "@/public/icon/BrandText";
 import BrandIcon from "@/public/icon/BrandIcon";
-const ImageSection = () => {
+const ImageSection = ({HeroImg} : {HeroImg : any}) => {
   return (
     <div className="w-[481px] h-[696px] gap-7  flex-col  select-none justify-center items-center hidden lg:flex">
       {/* Top Image */}
-      <div className="w-[481px] h-[501px] relative z-10 ">
+      <div className="w-[481px]  relative z-10 ">
         <Image src={HeroImg} alt="Hero img" draggable={false} />
       </div>
-      <div className="w-[408px] h-[1677px] gap-10 flex flex-col justify-center items-center  relative ">
+      {/* Bottom  */}
+      <div className="w-[408px] gap-10 flex flex-col justify-start items-center  relative ">
         {/* Brand Name */}
         <div className="flex w-[196px] h-[55px] gap-4 justify-center items-center ">
           <div className="w-[131px] h-[54px] flex flex-col justify-center items-center ">
@@ -29,7 +30,7 @@ const ImageSection = () => {
           <span className="font-vazirFa text-black font-extrabold text-[28px]">
             با بهترین کیفیت{" "}
           </span>
-          <span className="font-iransans text-[27px] text-[#c4c4c4] ">
+          <span className="font-vazirFa text-[27px] text-[#6b6b6b] ">
             شامل تازه ترین مواد اولیه
           </span>
         </p>

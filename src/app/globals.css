@@ -65,6 +65,11 @@
   .brandSectionShow {
     box-shadow: 4.52px 22.52px 31.72px 0px #6C6C6C33;
   }
+
+  .login_form_shadow {
+    box-shadow: 0px 16.41px 24.61px 0px #4646460D;
+
+  }
 }
 
 input:-internal-autofill-selected {
