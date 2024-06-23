@@ -70,6 +70,10 @@
     box-shadow: 0px 16.41px 24.61px 0px #4646460D;
 
   }
+
+  .icons_shadow {
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+  }
 }
 
 input:-internal-autofill-selected {
@@ -104,5 +108,11 @@ input:-internal-autofill-selected {
   .arrowbackletf {
     width: 15px;
     height: 15px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1440px;
   }
 }

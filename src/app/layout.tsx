@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={vazir.className}>
+      <body className={`${vazir.className} relative`}>
         <Header />
         <ReduxProvider>{children}</ReduxProvider>
         <Footer />
