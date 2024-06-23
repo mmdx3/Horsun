@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import OtpSlice from "./slice/OtpSlice";
 import registerFormStepSlice from "./slice/registerFormStep";
+import loginFormStep from "./slice/loginFormStep";
 
 export const store = configureStore({
   reducer: {
-    Otp : OtpSlice ,
-    registerFormStep : registerFormStepSlice,
+    Otp: OtpSlice,
+    registerFormStep: registerFormStepSlice,
+    loginformStep: loginFormStep,
   },
 });
 

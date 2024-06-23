@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import Login_bg from "@/public/images/register-bg.png";
@@ -7,9 +8,20 @@ import BrandIcon from "@/public/icon/BrandIcon";
 import HeroImg from "@/public/icon/login-image-section.svg";
 import ImageSection from "@/src/Components/ui/ImageSection";
 import LoginForm from "@/src/Components/pages/Login/LoginForm";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/src/context/Store";
+import VerifcationCode from "@/src/Components/ui/VerifcationCode";
+import { SetLoginStep } from "@/src/context/slice/loginFormStep";
 const page = () => {
+  const Step = useSelector((state: RootState) => state.loginformStep.step);
+  const dispatch = useDispatch();
+
+  const backStep = () => {
+    dispatch(SetLoginStep(1));
+  };
+
   return (
-    <div className="w-full h-screen mx-auto relative z-10 flex lg:flex-row flex-col  lg:justify-around justify-around items-center ">
+    <div className="w-full h-screen mx-auto relative z-10 flex lg:flex-row flex-col  lg:justify-around justify-center items-center max-lg:gap-[157px]">
       {/* bg Image */}
       <Image
         src={Login_bg}
@@ -30,7 +42,7 @@ const page = () => {
       {/* Hero Image Section */}
       <ImageSection HeroImg={HeroImg} />
 
-      <LoginForm />
+      {Step === 1 ? <LoginForm /> : <VerifcationCode backStep={backStep} />}
     </div>
   );
 };

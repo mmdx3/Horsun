@@ -8,12 +8,18 @@ import ImageSection from "@/src/Components/ui/ImageSection";
 import BrandName from "@/public/icon/BrandName";
 import BrandText from "@/public/icon/BrandText";
 import BrandIcon from "@/public/icon/BrandIcon";
-import VerifcationCode from "@/src/Components/pages/register/VerifcationCode";
-import { useSelector } from "react-redux";
+import VerifcationCode from "@/src/Components/ui/VerifcationCode";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/src/context/Store";
 import HeroImg from "@/public/icon/HeroImg.svg";
+import { setStep } from "@/src/context/slice/registerFormStep";
 const page = () => {
   const Step = useSelector((state: RootState) => state.registerFormStep.step);
+  const dispatch = useDispatch();
+
+  const backStep = () => {
+    dispatch(setStep(1));
+  };
   return (
     <div className="w-full h-screen mx-auto relative z-10 flex lg:flex-row flex-col  lg:justify-around justify-around items-center ">
       {/* bg Image */}
@@ -33,7 +39,11 @@ const page = () => {
       </div>
 
       <ImageSection HeroImg={HeroImg} />
-      {Step === 1 ? <RegistrationForm /> : <VerifcationCode />}
+      {Step === 1 ? (
+        <RegistrationForm />
+      ) : (
+        <VerifcationCode backStep={backStep} />
+      )}
     </div>
   );
 };

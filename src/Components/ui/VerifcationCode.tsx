@@ -1,16 +1,14 @@
 "use client";
 
 import useCountDown from "@/src/hooks/useCountDown";
-import OTPInput from "./OtpInput";
+import OTPInput from "../pages/register/OtpInput";
 import { formatTime } from "@/src/utils/FormatTime";
 import ArrowBackLeft from "@/public/icon/ArrowBackLeft";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { RootState } from "@/src/context/Store";
-import SweetAlert from "../../ui/SweetAlert";
-import { setStep } from "@/src/context/slice/registerFormStep";
+import SweetAlert from "./SweetAlert";
 
-const VerifcationCode = () => {
-  const dispatch = useDispatch();
+const VerifcationCode = ({ backStep }: { backStep: () => void }) => {
   const counter = useCountDown();
 
   const FormatTime = formatTime(counter);
@@ -27,12 +25,12 @@ const VerifcationCode = () => {
       });
     }
   };
-  
-  // Back To Register Form 
+
+  // Back To Register Form
   const BackStep = () => {
-    dispatch(setStep(1));
-  }
-  
+    backStep();
+  };
+
   return (
     <div className="w-[357px] lg:w-[413px] h-[392px] lg:h-[454px] rounded-xl lg:rounded-2xl  gap-6 lg:gap-8 bg-white register-form-shadow-box flex flex-col justify-center items-center px-4 lg:px-8 py-8 relative">
       <div className="w-[309px] h-[82px] gap-2 flex flex-col justify-center items-center">
@@ -68,7 +66,10 @@ const VerifcationCode = () => {
         </h3>
       </div>
       {/* Back to Register Form */}
-      <div onClick={BackStep} className="w-[68px] h-[18px] gap-1 flex justify-center items-center cursor-pointer absolute top-9 left-[1.25rem] lg:left-9 ">
+      <div
+        onClick={BackStep}
+        className="w-[68px] h-[18px] gap-1 flex justify-center items-center cursor-pointer absolute top-9 left-[1.25rem] lg:left-9 "
+      >
         <ArrowBackLeft width={"18"} height={"18"} smWidth="15" />
         <span className="font-dana font-normal text-[8px]  lg:text-[10px] text-[#313131] ">
           بازگشت{" "}
